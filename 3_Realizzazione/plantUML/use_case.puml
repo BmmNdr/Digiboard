@@ -1,0 +1,62 @@
+@startuml USE_CASE
+
+left to right direction
+
+skinparam linetype ortho
+
+actor User as "Utente"
+actor AI as "Intelligenza Artificiale"
+database DB as "Database"
+actor Admin as "Amministratore di sistema"
+
+rectangle "Sistema Informativo" {
+    rectangle "Accesso Circolari" as UC1 {
+        usecase "Ricerca e Filtro" as UC1_1
+        usecase "Visualizzazione" as UC1_2
+    }
+
+    rectangle "Visualizzazione Orario Professori" as UC3{
+        usecase "Ricerca e Filtro" as UC3_1
+        usecase "Visualizzazione Classe" as UC3_2
+    }
+
+    rectangle "Accesso Modulistica" as UC2 {
+        usecase "Ricerca e Filtro" as UC2_1
+        usecase "Visualizzazione" as UC2_2
+        usecase "Download" as UC2_3
+    }
+}
+
+rectangle "Categorizzazione Circolari" as UC5
+
+rectangle "Interfaccia Utente" as UI {
+    rectangle "Monitor" as Monitor
+    rectangle "Totem" as Totem
+    rectangle "Sito Web" as Web
+}
+
+User --> UI
+
+Admin --> UC5
+AI <-- UC5
+
+Web --> UC1_1
+Web --> UC2_1
+Web --> UC3_1
+
+Monitor --> UC1_1
+
+Totem --> UC1_1
+Totem --> UC3_1
+
+UC1_1 --> DB
+UC5 --> DB
+UC2_1 --> DB
+UC3_1 --> DB
+
+UC1_1 --> UC1_2
+UC2_1 --> UC2_2
+UC2_2 --> UC2_3
+UC3_1 --> UC3_2
+
+@enduml

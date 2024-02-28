@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="582px" preserveAspectRatio="none" style="width:983px;height:582px;background:#FFFFFF;" version="1.1" viewBox="0 0 983 582" width="983px" zoomAndPan="magnify"><defs/><g><!--MD5=[a54037a2c5bc0d47129e400c00ad8cf9]
+cluster Sistema Informativo--><g id="cluster_Sistema Informativo"><rect fill="none" height="382" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:1.0;" width="658.5" x="318.5" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="139" x="578.25" y="23.5332">Sistema Informativo</text></g><!--MD5=[3c3d842df74d94e39920dfaf56b51232]
+cluster UC1--><g id="cluster_UC1"><rect fill="none" height="86" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:1.0;" width="420.5" x="342.5" y="161"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="122" x="491.75" y="177.5332">Accesso Circolari</text></g><!--MD5=[c44692bf5eaf7c2b802ef0b55cc04543]
+cluster UC3--><g id="cluster_UC3"><rect fill="none" height="94" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:1.0;" width="439.5" x="342.5" y="271"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="231" x="446.75" y="287.5332">Visualizzazione Orario Professori</text></g><!--MD5=[186bec8ce08b25529cc2b55a948de528]
+cluster UC2--><g id="cluster_UC2"><rect fill="none" height="86" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:1.0;" width="610.5" x="342.5" y="51"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="144" x="575.75" y="67.5332">Accesso Modulistica</text></g><!--MD5=[9681dc6e01e10c6b4fe06895ae94f592]
+cluster UI--><g id="cluster_UI"><rect fill="none" height="271" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:1.0;" width="141" x="123" y="81"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="125" x="131" y="97.5332">Interfaccia Utente</text></g><g id="elem_UC1_1"><ellipse cx="431.5109" cy="214.0022" fill="#F1F1F1" rx="73.0109" ry="17.0022" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="96" x="380.5109" y="218.5188">Ricerca e Filtro</text></g><g id="elem_UC1_2"><ellipse cx="674.2859" cy="213.8572" fill="#F1F1F1" rx="72.2859" ry="16.8572" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="94" x="624.2859" y="218.3738">Visualizzazione</text></g><g id="elem_UC3_1"><ellipse cx="431.5109" cy="326.0022" fill="#F1F1F1" rx="73.0109" ry="17.0022" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="96" x="380.5109" y="330.5188">Ricerca e Filtro</text></g><g id="elem_UC3_2"><ellipse cx="674.2628" cy="328.1526" fill="#F1F1F1" rx="91.2628" ry="20.6526" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="141" x="603.7628" y="331.8811">Visualizzazione Classe</text></g><g id="elem_UC2_1"><ellipse cx="431.5109" cy="104.0022" fill="#F1F1F1" rx="73.0109" ry="17.0022" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="96" x="380.5109" y="108.5188">Ricerca e Filtro</text></g><g id="elem_UC2_2"><ellipse cx="674.2859" cy="103.8572" fill="#F1F1F1" rx="72.2859" ry="16.8572" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="94" x="624.2859" y="108.3738">Visualizzazione</text></g><g id="elem_UC2_3"><ellipse cx="881.7356" cy="104.0492" fill="#F1F1F1" rx="55.7356" ry="15.5492" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="62" x="847.7356" y="108.5658">Download</text></g><!--MD5=[38b63608fc882c218f92584be216d0cc]
+entity Monitor--><g id="elem_Monitor"><rect fill="#F1F1F1" height="37.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="67" x="160" y="198"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47" x="170" y="222.5332">Monitor</text></g><!--MD5=[8f757f2cf91077181c0aa57ec45ce07c]
+entity Totem--><g id="elem_Totem"><rect fill="#F1F1F1" height="37.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="60" x="163.5" y="271"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40" x="173.5" y="295.5332">Totem</text></g><!--MD5=[3193059314a247eafe92785e7a6ac74f]
+entity Web--><g id="elem_Web"><rect fill="#F1F1F1" height="37.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="77" x="155" y="125"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="57" x="165" y="149.5332">Sito Web</text></g><!--MD5=[fee662a292a0353a69bd162820bae93b]
+entity User--><g id="elem_User"><ellipse cx="26.5" cy="313.5" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M26.5,321.5 L26.5,348.5 M13.5,329.5 L39.5,329.5 M26.5,348.5 L13.5,363.5 M26.5,348.5 L39.5,363.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="41" x="6" y="379.5332">Utente</text></g><!--MD5=[3f77536d44baa329b128c7832d6efa03]
+entity AI--><g id="elem_AI"><ellipse cx="193.5" cy="394.5" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M193.5,402.5 L193.5,429.5 M180.5,410.5 L206.5,410.5 M193.5,429.5 L180.5,444.5 M193.5,429.5 L206.5,444.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="131" x="128" y="460.5332">Intelligenza Artificiale</text></g><!--MD5=[f9ba5bf973e7832d2ce5ed59077b93f7]
+entity DB--><g id="elem_DB"><path d="M634,415.5 C634,405.5 674.5,405.5 674.5,405.5 C674.5,405.5 715,405.5 715,415.5 L715,442.1094 C715,452.1094 674.5,452.1094 674.5,452.1094 C674.5,452.1094 634,452.1094 634,442.1094 L634,415.5 " fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;"/><path d="M634,415.5 C634,425.5 674.5,425.5 674.5,425.5 C674.5,425.5 715,425.5 715,415.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="61" x="644" y="444.0332">Database</text></g><!--MD5=[97ab183161fd5d1db7fba7485cf76add]
+entity Admin--><g id="elem_Admin"><ellipse cx="193.5" cy="507.5" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M193.5,515.5 L193.5,542.5 M180.5,523.5 L206.5,523.5 M193.5,542.5 L180.5,557.5 M193.5,542.5 L206.5,557.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="161" x="113" y="573.5332">Amministratore di sistema</text></g><!--MD5=[563d8849f4297f1440f625d981fee8a4]
+entity UC5--><g id="elem_UC5"><rect fill="#F1F1F1" height="37.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="183" x="340" y="410"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="163" x="350" y="434.5332">Categorizzazione Circolari</text></g><!--MD5=[48af56c9a0e5a8a77220d910b4b4e159]
+link User to UI--><g id="link_User_UI"><path d="M47.31,344 C57.9775,344 71.8619,344 86.8244,344 C94.3056,344 102.0564,344 109.8094,344 C113.6859,344 117.5629,344 121.4071,344 C121.8876,344 122.3676,344 122.847,344 " fill="none" id="User-to-UI" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="122.847,344,113.847,340,117.847,344,113.847,348,122.847,344" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[918702f036aedbdc0d9e7427d5dc1819]
+link Admin to UC5--><g id="link_Admin_UC5"><path d="M267,498.89 C267,469.88 267,435.33 267,435.33 C267,435.33 334.63,435.33 334.63,435.33 " fill="none" id="Admin-to-UC5" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="339.63,435.33,330.63,431.33,334.63,435.33,330.63,439.33,339.63,435.33" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[a347b753cd4354122e07709f44b240aa]
+reverse link AI to UC5--><g id="link_AI_UC5"><path d="M264.16,422.67 C264.16,422.67 339.77,422.67 339.77,422.67 " fill="none" id="AI-backto-UC5" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="259.16,422.67,268.16,426.67,264.16,422.67,268.16,418.67,259.16,422.67" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[e6c2df6702115ae4e9db1062c9967bfa]
+link Web to UC1_1--><g id="link_Web_UC1_1"><path d="M232.08,137.67 C299.58,137.67 432,137.67 432,137.67 C432,137.67 432,191.68 432,191.68 " fill="none" id="Web-to-UC1_1" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="432,196.68,436,187.68,432,191.68,428,187.68,432,196.68" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[198f2f51d067b5fcf66ca062eaae4f0a]
+link Web to UC2_1--><g id="link_Web_UC2_1"><path d="M194,124.94 C194,114.63 194,104 194,104 C194,104 353.3,104 353.3,104 " fill="none" id="Web-to-UC2_1" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="358.3,104,349.3,100,353.3,104,349.3,108,358.3,104" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[9e8d2ef01130125a81f4da1a3366515c]
+link Web to UC3_1--><g id="link_Web_UC3_1"><path d="M232.21,150.33 C240.08,150.33 246,150.33 246,150.33 C246,150.33 246,320.33 246,320.33 C246,320.33 357.43,320.33 357.43,320.33 " fill="none" id="Web-to-UC3_1" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="362.43,320.33,353.43,316.33,357.43,320.33,353.43,324.33,362.43,320.33" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[7f79dfcc7bb50d3220912b0426632569]
+link Monitor to UC1_1--><g id="link_Monitor_UC1_1"><path d="M227.09,214.5 C227.09,214.5 353.39,214.5 353.39,214.5 " fill="none" id="Monitor-to-UC1_1" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="358.39,214.5,349.39,210.5,353.39,214.5,349.39,218.5,358.39,214.5" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[408c57d24fd55917a815b893dce4df6b]
+link Totem to UC1_1--><g id="link_Totem_UC1_1"><path d="M223.71,289.25 C287.88,289.25 432,289.25 432,289.25 C432,289.25 432,236.08 432,236.08 " fill="none" id="Totem-to-UC1_1" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="432,231.08,428,240.08,432,236.08,436,240.08,432,231.08" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[fe68444b2e2707ab1507539d7841452f]
+link Totem to UC3_1--><g id="link_Totem_UC3_1"><path d="M209,309.37 C209,320.25 209,331.67 209,331.67 C209,331.67 357.62,331.67 357.62,331.67 " fill="none" id="Totem-to-UC3_1" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="362.62,331.67,353.62,327.67,357.62,331.67,353.62,335.67,362.62,331.67" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[2f66b713da59fcbd2502a842eeb333ab]
+link UC1_1 to DB--><g id="link_UC1_1_DB"><path d="M500.41,219.67 C527.84,219.67 553,219.67 553,219.67 C553,219.67 553,425.2 553,425.2 C553,425.2 628.7,425.2 628.7,425.2 " fill="none" id="UC1_1-to-DB" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="633.7,425.2,624.7,421.2,628.7,425.2,624.7,429.2,633.7,425.2" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[2a5b53bb2ed2f3f6688c73b7faf0eeb5]
+link UC5 to DB--><g id="link_UC5_DB"><path d="M523.02,440.4 C523.02,440.4 628.87,440.4 628.87,440.4 " fill="none" id="UC5-to-DB" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="633.87,440.4,624.87,436.4,628.87,440.4,624.87,444.4,633.87,440.4" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[846c2d2d0cba850a58de723565e16077]
+link UC2_1 to DB--><g id="link_UC2_1_DB"><path d="M500.55,109.67 C534.41,109.67 568,109.67 568,109.67 C568,109.67 568,417.6 568,417.6 C568,417.6 628.93,417.6 628.93,417.6 " fill="none" id="UC2_1-to-DB" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="633.93,417.6,624.93,413.6,628.93,417.6,624.93,421.6,633.93,417.6" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[a1e1a9210fb534749306c10c62c8a999]
+link UC3_1 to DB--><g id="link_UC3_1_DB"><path d="M500.45,331.67 C520.93,331.67 538,331.67 538,331.67 C538,331.67 538,432.8 538,432.8 C538,432.8 628.92,432.8 628.92,432.8 " fill="none" id="UC3_1-to-DB" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="633.92,432.8,624.92,428.8,628.92,432.8,624.92,436.8,633.92,432.8" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[cfaa93c9bee4e20f57b5b6ee25636054]
+link UC1_1 to UC1_2--><g id="link_UC1_1_UC1_2"><path d="M500.48,208.33 C500.48,208.33 600.76,208.33 600.76,208.33 " fill="none" id="UC1_1-to-UC1_2" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="605.76,208.33,596.76,204.33,600.76,208.33,596.76,212.33,605.76,208.33" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[64d1d60ad790e56ca440ff45f9b67380]
+link UC2_1 to UC2_2--><g id="link_UC2_1_UC2_2"><path d="M500.48,98.33 C500.48,98.33 600.76,98.33 600.76,98.33 " fill="none" id="UC2_1-to-UC2_2" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="605.76,98.33,596.76,94.33,600.76,98.33,596.76,102.33,605.76,98.33" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[dc8d9c8b482039ba7ea185a0e0a1358e]
+link UC2_2 to UC2_3--><g id="link_UC2_2_UC2_3"><path d="M747.19,104 C747.19,104 820.94,104 820.94,104 " fill="none" id="UC2_2-to-UC2_3" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="825.94,104,816.94,100,820.94,104,816.94,108,825.94,104" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[3d39fb221b2010d42e1fc8e0ead78d9c]
+link UC3_1 to UC3_2--><g id="link_UC3_1_UC3_2"><path d="M500.48,320.33 C500.48,320.33 584.33,320.33 584.33,320.33 " fill="none" id="UC3_1-to-UC3_2" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="589.33,320.33,580.33,316.33,584.33,320.33,580.33,324.33,589.33,320.33" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[378344a068c32c953704a393cf1ae5af]
+@startuml USE_CASE
+
+left to right direction
+
+skinparam linetype ortho
+
+actor User as "Utente"
+actor AI as "Intelligenza Artificiale"
+database DB as "Database"
+actor Admin as "Amministratore di sistema"
+
+rectangle "Sistema Informativo" {
+    rectangle "Accesso Circolari" as UC1 {
+        usecase "Ricerca e Filtro" as UC1_1
+        usecase "Visualizzazione" as UC1_2
+    }
+
+    rectangle "Visualizzazione Orario Professori" as UC3{
+        usecase "Ricerca e Filtro" as UC3_1
+        usecase "Visualizzazione Classe" as UC3_2
+    }
+
+    rectangle "Accesso Modulistica" as UC2 {
+        usecase "Ricerca e Filtro" as UC2_1
+        usecase "Visualizzazione" as UC2_2
+        usecase "Download" as UC2_3
+    }
+}
+
+rectangle "Categorizzazione Circolari" as UC5
+
+rectangle "Interfaccia Utente" as UI {
+    rectangle "Monitor" as Monitor
+    rectangle "Totem" as Totem
+    rectangle "Sito Web" as Web
+}
+
+User - -> UI
+
+Admin - -> UC5
+AI <- - UC5
+
+Web - -> UC1_1
+Web - -> UC2_1
+Web - -> UC3_1
+
+Monitor - -> UC1_1
+
+Totem - -> UC1_1
+Totem - -> UC3_1
+
+UC1_1 - -> DB
+UC5 - -> DB
+UC2_1 - -> DB
+UC3_1 - -> DB
+
+UC1_1 - -> UC1_2
+UC2_1 - -> UC2_2
+UC2_2 - -> UC2_3
+UC3_1 - -> UC3_2
+
+@enduml
+
+PlantUML version 1.2022.7(Mon Aug 22 19:01:30 CEST 2022)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: GB
+--></g></svg>
