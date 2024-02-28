@@ -1,0 +1,28 @@
+@startuml
+actor Utenti
+participant "Totem / Sito Web" as Totem
+participant "Sistema Informativo\ncon database" as Sistema
+
+== Accesso alla funzionalità Orario ==
+Utenti -> Totem : Accesso tramite dispositivo
+note right of Totem: Utenti accedono agli orari
+
+== Selezione Orari Professori ==
+Utenti -> Sistema : Seleziona opzione orari docenti
+note right of Sistema: Visualizzazione pagina orari
+
+== Ricerca e Filtraggio ==
+Utenti -> Sistema : Inserisce nome docente
+activate Sistema
+Sistema -> Sistema : Filtra risultati per nome/cognome
+deactivate Sistema
+note right of Sistema: Lista docenti filtrata mostrata
+
+== Selezione Docente e Visualizzazione Aula ==
+Utenti -> Sistema : Seleziona nome docente dalla lista
+activate Sistema
+Sistema -> Utenti : Fornisce informazioni aula
+deactivate Sistema
+note right of Sistema: Informazioni dettagliate sull'aula
+
+@enduml

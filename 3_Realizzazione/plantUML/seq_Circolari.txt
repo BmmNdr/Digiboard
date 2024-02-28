@@ -1,0 +1,27 @@
+@startuml
+actor "Amministratore di sistema" as Admin
+actor "Intelligenza Artificiale" as AI
+participant "Sistema Informativo\ncon database" as Sistema
+actor Utente
+
+== Pubblicazione Circolare ==
+Admin -> Sistema : Carica circolare
+activate Sistema
+note right of Sistema: Circolare pubblicata sul sito
+
+== Categorizzazione Circolare ==
+Sistema -> AI : Sottopone circolare a IA per analisi
+activate AI
+AI -> AI : Analizza circolare
+AI -> Sistema : Etichetta circolare con categorie
+deactivate AI
+note right of Sistema: Circolare categorizzata
+
+== Visualizzazione Circolare ==
+Sistema -> Utente : Mostra circolare su sito, totem, TV
+activate Utente
+Utente -> Sistema : Ricerca circolare per categoria
+Sistema -> Utente : Filtra e mostra risultati ricerca
+deactivate Utente
+
+@enduml

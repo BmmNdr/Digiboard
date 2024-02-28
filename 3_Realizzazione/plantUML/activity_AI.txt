@@ -1,0 +1,30 @@
+@startuml
+start
+:Caricamento circolare da parte dell'Amministratore di sistema;
+:Acquisizione circolare da parte del sistema;
+:Analisi contenuto circolare tramite IA;
+if (Contenuto analizzato correttamente?) then (Sì)
+  :Assegnazione etichette basate su:
+  * Lotto
+  * Indirizzo
+  * Anno
+  * Destinatari;
+else (No)
+  :Notifica errore all'Amministratore di sistema;
+  stop
+endif
+
+:Salvataggio circolare categorizzata nel database;
+:Rendere circolare disponibile per visualizzazione;
+partition "Visualizzazione Circolare" {
+  :Utente accede al sistema;
+  if (Utente ricerca circolare?) then (Sì)
+    :Utente inserisce criteri di ricerca;
+    :Sistema filtra circolari basate su etichette;
+  else (No)
+    :Visualizzazione lista circolari;
+  endif
+  :Selezione e visualizzazione dettagli circolare;
+}
+stop
+@enduml

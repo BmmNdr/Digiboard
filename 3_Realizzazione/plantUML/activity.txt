@@ -1,0 +1,32 @@
+@startuml
+start
+:Utenti accedono al sistema;
+
+if (Tipo di utente?) then (Studente)
+  :Accesso diretto alla modulistica;
+  :Visualizzazione orario scolastico;
+else (Professore)
+  :Autenticazione;
+  :Accesso alla modulistica riservata;
+  :Visualizzazione orario scolastico;
+endif
+
+:Selezione categoria desiderata;
+partition Modulistica {
+  :Ricerca moduli/documenti;
+  if (Trovare moduli specifici?) then (Sì)
+    :Utilizzo ricerca avanzata;
+  else (No)
+  endif
+  :Visualizzazione dettagli modulo;
+}
+
+partition Orario Scolastico {
+  :Ricerca orario per docente;
+  :Filtraggio risultati per nome/cognome;
+  :Visualizzazione dettagli aula e orario;
+}
+
+
+stop
+@enduml

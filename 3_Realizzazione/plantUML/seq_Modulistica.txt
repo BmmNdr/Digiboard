@@ -1,0 +1,46 @@
+@startuml
+actor Studenti
+actor Professori
+participant "Sistema Informativo\ncon database" as Sistema
+
+== Accesso al sito informativo ==
+Professori -> Sistema : Autenticazione con credenziali
+activate Sistema
+Sistema -> Sistema : Verifica credenziali
+deactivate Sistema
+note right of Sistema: Gli studenti accedono\nsenza autenticazione
+
+== Navigazione modulistica ==
+Professori -> Sistema : Richiesta modulistica professori
+activate Sistema
+Sistema -> Professori : Mostra modulistica professori
+deactivate Sistema
+
+Studenti -> Sistema : Accesso modulistica studenti
+activate Sistema
+Sistema -> Studenti : Mostra modulistica studenti
+deactivate Sistema
+
+== Utilizzo strumenti di ricerca e filtraggio ==
+Studenti -> Sistema : Ricerca e filtro moduli
+activate Sistema
+Sistema -> Studenti : Mostra risultati ricerca
+deactivate Sistema
+
+Professori -> Sistema : Ricerca e filtro moduli
+activate Sistema
+Sistema -> Professori : Mostra risultati ricerca
+deactivate Sistema
+
+== Visualizzazione dettagli modulo ==
+Studenti -> Sistema : Seleziona modulo
+activate Sistema
+Sistema -> Studenti : Mostra dettagli modulo
+deactivate Sistema
+
+Professori -> Sistema : Seleziona modulo
+activate Sistema
+Sistema -> Professori : Mostra dettagli modulo
+deactivate Sistema
+
+@enduml
