@@ -1,4 +1,4 @@
-@startuml
+@startuml SEQUENCE_MODULISTICA
 actor Studenti
 actor Professori
 participant "Sistema Informativo\ncon database" as Sistema

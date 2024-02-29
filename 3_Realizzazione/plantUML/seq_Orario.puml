@@ -1,4 +1,4 @@
-@startuml
+@startuml SEQUENCE_ORARIO
 actor Utenti
 participant "Totem / Sito Web" as Totem
 participant "Sistema Informativo\ncon database" as Sistema

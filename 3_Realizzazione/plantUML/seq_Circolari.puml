@@ -1,4 +1,4 @@
-@startuml
+@startuml SEQUENCE_CIRCOLARI
 actor "Amministratore di sistema" as Admin
 actor "Intelligenza Artificiale" as AI
 participant "Sistema Informativo\ncon database" as Sistema

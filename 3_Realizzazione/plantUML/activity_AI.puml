@@ -1,4 +1,4 @@
-@startuml
+@startuml ACTIVITY_AI
 start
 :Caricamento circolare da parte dell'Amministratore di sistema;
 :Acquisizione circolare da parte del sistema;

@@ -1,4 +1,4 @@
-@startuml
+@startuml ACTIVITY
 start
 :Utenti accedono al sistema;
 
@@ -21,7 +21,7 @@ partition Modulistica {
   :Visualizzazione dettagli modulo;
 }
 
-partition Orario Scolastico {
+partition "Orario Scolastico" {
   :Ricerca orario per docente;
   :Filtraggio risultati per nome/cognome;
   :Visualizzazione dettagli aula e orario;
