@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 22, 2024 at 10:02 AM
+-- Generation Time: Apr 29, 2024 at 08:58 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `5ai_db_digiboard`
+-- Database: `digiboard`
 --
 
 -- --------------------------------------------------------
@@ -39,12 +39,11 @@ CREATE TABLE `aula` (
 --
 
 CREATE TABLE `circolare` (
-  `NUM` int(4) NOT NULL,
-  `titolo` varchar(50) NOT NULL,
+  `num` int(4) NOT NULL,
+  `titolo` varchar(128) NOT NULL,
   `testo` text NOT NULL,
   `dataPubblicazione` date NOT NULL,
-  `allegati` varchar(50) DEFAULT NULL,
-  `idIndirizzamento` int(11) DEFAULT NULL
+  `ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
@@ -186,8 +185,7 @@ ALTER TABLE `aula`
 -- Indexes for table `circolare`
 --
 ALTER TABLE `circolare`
-  ADD PRIMARY KEY (`NUM`),
-  ADD KEY `idIndirizzamento` (`idIndirizzamento`);
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- Indexes for table `classe`
@@ -248,12 +246,6 @@ ALTER TABLE `schermo`
 --
 ALTER TABLE `aula`
   ADD CONSTRAINT `aula_ibfk_1` FOREIGN KEY (`idLuogo`) REFERENCES `luogo` (`ID`);
-
---
--- Constraints for table `circolare`
---
-ALTER TABLE `circolare`
-  ADD CONSTRAINT `circolare_ibfk_1` FOREIGN KEY (`idIndirizzamento`) REFERENCES `indirizzamento` (`ID`);
 
 --
 -- Constraints for table `schermo`
