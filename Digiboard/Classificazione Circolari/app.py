@@ -1,7 +1,7 @@
 import google.generativeai as genai
 import db
 
-myDB = db.Database(host="localhost", username="root", password="", database="5ai_db_digiboard")
+myDB = db.Database(host="db.springmc.net", port="3307", username="digiboard", password="digiboard", database="digiboard")
 myDB.connect()
 
 def getClassesCSV():

@@ -1,11 +1,12 @@
 import mysql.connector
 
 class Database:
-    def __init__(self, host, username, password, database):
+    def __init__(self, host, port, username, password, database):
         self.host = host
         self.username = username
         self.password = password
         self.database = database
+        self.port = port
         self.connection = None
         self.cursor = None
 
@@ -13,6 +14,7 @@ class Database:
         try:
             self.connection = mysql.connector.connect(
                 host=self.host,
+                port=self.port,
                 user=self.username,
                 password=self.password,
                 database=self.database
