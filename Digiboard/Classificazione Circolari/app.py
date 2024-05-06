@@ -3,6 +3,7 @@ from db import Database
 from scraping import Scraper
 from classifier import Classifier
 import operator
+import datetime
 
 def getLastNum(db):
     lastNum = db.fetch_data("SELECT MAX(num) FROM `circolare` WHERE YEAR(dataPubblicazione) = YEAR(NOW())")[0][0]
@@ -25,6 +26,8 @@ if __name__ == '__main__':
     upTo = getLastNum(db)
     scraper = Scraper(upTo)
     circArray = scraper.scrape()
+    
+    print("Scraping completed" + datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     
     for circular in circArray:
         circID = db.insert_query("INSERT INTO circolare (num, titolo, testo, dataPubblicazione) VALUES (%s, %s, %s, %s)", (circular.num, circular.titolo, circular.testo, circular.dataPubblicazione))

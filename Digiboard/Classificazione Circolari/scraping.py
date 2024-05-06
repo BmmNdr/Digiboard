@@ -31,7 +31,7 @@ class Scraper:
                 circNum = (int((re.findall(r'\d+', val.text))[0]))
                 
             if(int(self.upTo) == circNum):
-              flag = False
+              self.flag = False
               break
             
             urlCric = a['href']
@@ -48,4 +48,6 @@ class Scraper:
             
             circArray.append(Circular(circNum, a.text, circText, data))
             
-      return circArray
+            print("Scraped circular number " + str(circNum))
+            
+    return circArray
