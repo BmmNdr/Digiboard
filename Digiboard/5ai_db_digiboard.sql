@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 29, 2024 at 08:58 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Host: biemmisql-db-1:3307
+-- Generation Time: May 06, 2024 at 02:54 PM
+-- Server version: 8.3.0
+-- PHP Version: 8.2.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,8 +29,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `aula` (
   `COD` char(5) NOT NULL,
-  `idLuogo` int(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `idLuogo` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -39,12 +39,20 @@ CREATE TABLE `aula` (
 --
 
 CREATE TABLE `circolare` (
-  `num` int(4) NOT NULL,
+  `num` int NOT NULL,
   `titolo` varchar(128) NOT NULL,
   `testo` text NOT NULL,
   `dataPubblicazione` date NOT NULL,
-  `ID` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `ID` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `circolare`
+--
+
+INSERT INTO `circolare` (`num`, `titolo`, `testo`, `dataPubblicazione`, `ID`) VALUES
+(5, 'abc', 'abc', '2023-05-10', 1),
+(219, 'def', 'def', '2024-05-06', 2);
 
 -- --------------------------------------------------------
 
@@ -55,7 +63,7 @@ CREATE TABLE `circolare` (
 CREATE TABLE `classe` (
   `ID` char(6) NOT NULL,
   `codAula` char(5) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `classe`
@@ -142,10 +150,10 @@ INSERT INTO `classe` (`ID`, `codAula`) VALUES
 --
 
 CREATE TABLE `indirizzamento` (
-  `ID` int(11) NOT NULL,
-  `idCircolare` int(4) NOT NULL,
-  `idClasse` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `ID` int NOT NULL,
+  `idCircolare` int NOT NULL,
+  `idClasse` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -154,10 +162,10 @@ CREATE TABLE `indirizzamento` (
 --
 
 CREATE TABLE `luogo` (
-  `ID` int(2) NOT NULL,
-  `piano` int(1) NOT NULL,
-  `lotto` int(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `ID` int NOT NULL,
+  `piano` int NOT NULL,
+  `lotto` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -166,9 +174,9 @@ CREATE TABLE `luogo` (
 --
 
 CREATE TABLE `schermo` (
-  `COD` int(11) NOT NULL,
-  `idLuogo` int(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `COD` int NOT NULL,
+  `idLuogo` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Indexes for dumped tables
@@ -220,22 +228,28 @@ ALTER TABLE `schermo`
 --
 
 --
+-- AUTO_INCREMENT for table `circolare`
+--
+ALTER TABLE `circolare`
+  MODIFY `ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
 -- AUTO_INCREMENT for table `indirizzamento`
 --
 ALTER TABLE `indirizzamento`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `luogo`
 --
 ALTER TABLE `luogo`
-  MODIFY `ID` int(2) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `schermo`
 --
 ALTER TABLE `schermo`
-  MODIFY `COD` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `COD` int NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
@@ -246,6 +260,13 @@ ALTER TABLE `schermo`
 --
 ALTER TABLE `aula`
   ADD CONSTRAINT `aula_ibfk_1` FOREIGN KEY (`idLuogo`) REFERENCES `luogo` (`ID`);
+
+--
+-- Constraints for table `indirizzamento`
+--
+ALTER TABLE `indirizzamento`
+  ADD CONSTRAINT `FK1` FOREIGN KEY (`idCircolare`) REFERENCES `circolare` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK2` FOREIGN KEY (`idClasse`) REFERENCES `classe` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `schermo`

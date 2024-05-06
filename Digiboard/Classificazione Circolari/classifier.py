@@ -12,7 +12,8 @@ class Classifier:
             
         self.basicPrompt = self.basicPrompt[:-1] + "."
 
-        self.basicPrompt += "\nIf the circular shoud be read by the classes of a certain year, but with no specification on the letter, answer using the year. If all the classes should read the circulare, answer using %. The circular is as follows:\n"
+        self.basicPrompt += "\nIn the classes names: AFM stands for 'Amministrazione Finanza e Marketing'; CHI stands for 'Chimico'; INF stands for 'Informatica'; LL stands for 'Linguistico'; LSA stands for 'Scienze Applicate'; MEC stands for 'Meccanica'; TUR stands for 'Turistico'; RIM stands for 'Relazioni Internazionali e Marketing'.\n"
+        self.basicPrompt += "\nIf the circular shoud be read by the classes of a certain year, but with no specification on the letter, answer using the year. The circular is as follows:\n"
 
 
     def classify(self, circular):

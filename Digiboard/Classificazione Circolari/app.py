@@ -2,6 +2,7 @@ from unicodedata import numeric
 from db import Database
 from scraping import Scraper
 from classifier import Classifier
+import operator
 
 def getLastNum(db):
     lastNum = db.fetch_data("SELECT MAX(num) FROM `circolare` WHERE YEAR(dataPubblicazione) = YEAR(NOW())")[0][0]
@@ -10,7 +11,8 @@ def getLastNum(db):
 
 if __name__ == '__main__':
     
-    db = Database(host="db.springmc.net", port="3307", username="digiboard", password="digiboard", database="digiboard")
+    #db = Database(host="db.springmc.net", port="3307", username="digiboard", password="digiboard", database="digiboard")
+    db = Database(host="localhost", port="3306", username="root", password="", database="digiboard")
     db.connect()
     
     classifier = Classifier(db)
@@ -27,9 +29,9 @@ if __name__ == '__main__':
     for circular in circArray:
         circID = db.insert_query("INSERT INTO circolare (num, titolo, testo, dataPubblicazione) VALUES (%s, %s, %s, %s)", (circular.num, circular.titolo, circular.testo, circular.dataPubblicazione))
         
-        print("Inserted with ID: " + str(circID))
+        print("Inserted circ. num. : " + str(circular.num))
         
-        response = classifier.classify(circular.testo)
+        response = classifier.classify(circular.testo.replace("\\n", " "))
         
         query = "INSERT INTO indirizzamento(idCircolare, idClasse) VALUES"
         if(response == "%"):  # All classes
@@ -43,7 +45,8 @@ if __name__ == '__main__':
             splittedResponse = response.split(";")
         
             for i in range(len(splittedResponse)):
-                query += " (" + str(circID) + ", " + str(splittedResponse[i]) + "),"
+                if(operator.contains(classes, splittedResponse[i])):
+                    query += " (" + str(circID) + ", '" + str(splittedResponse[i]) + "'),"
                 
         query = query[:-1]
         

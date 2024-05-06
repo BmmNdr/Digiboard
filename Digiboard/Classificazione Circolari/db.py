@@ -23,6 +23,7 @@ class Database:
             print("Connected to database successfully")
         except mysql.connector.Error as err:
             print("Error:", err)
+            quit()
 
     def execute_query(self, query, params=None):
         try:
