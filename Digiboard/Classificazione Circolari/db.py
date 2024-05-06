@@ -31,6 +31,16 @@ class Database:
             print("Query executed successfully")
         except mysql.connector.Error as err:
             print("Error:", err)
+            
+    def insert_query(self, query, params=None):
+        try:
+            self.cursor.execute(query, params)
+            self.connection.commit()
+            print("Query executed successfully")
+            
+            return self.cursor.lastrowid
+        except mysql.connector.Error as err:
+            print("Error:", err)
 
     def fetch_data(self, query, params=None):
         try:

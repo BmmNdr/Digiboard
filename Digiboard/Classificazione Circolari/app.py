@@ -1,30 +1,54 @@
-import google.generativeai as genai
-import db
+from unicodedata import numeric
+from db import Database
+from scraping import Scraper
+from classifier import Classifier
 
-myDB = db.Database(host="db.springmc.net", port="3307", username="digiboard", password="digiboard", database="digiboard")
-myDB.connect()
+def getLastNum(db):
+    lastNum = db.fetch_data("SELECT MAX(num) FROM `circolare` WHERE YEAR(dataPubblicazione) = YEAR(NOW())")[0][0]
+    
+    return lastNum
 
-def getClassesCSV():
-    result = myDB.fetch_data("SELECT ID FROM classe")
-    string = ""
-
+if __name__ == '__main__':
+    
+    db = Database(host="db.springmc.net", port="3307", username="digiboard", password="digiboard", database="digiboard")
+    db.connect()
+    
+    classifier = Classifier(db)
+    
+    classes = []
+    result = db.fetch_data("SELECT ID FROM classe")
     for row in result:
-        string += row[0] + ";"
+        classes.append(row[0])
+    
+    upTo = getLastNum(db)
+    scraper = Scraper(upTo)
+    circArray = scraper.scrape()
+    
+    for circular in circArray:
+        circID = db.insert_query("INSERT INTO circolare (num, titolo, testo, dataPubblicazione) VALUES (%s, %s, %s, %s)", (circular.num, circular.titolo, circular.testo, circular.dataPubblicazione))
         
-    return string
-
-basicPrompt = "You are a school assistant responsible for helping users find which classes should read the circular they send you. Your response should be in CSV format containing only the classes, separated by semicolons, and no additional characters or spaces. Choose the classes only from the following list; do not add anything not included:\n"
-basicPrompt += getClassesCSV()
-
-basicPrompt += "\nIf the circular shoud be read by the classes of a certain year, but with no specification on the letter, answer using the year.The circular is as follows:\n"
-
-def classify(circular):
-    genai.configure(api_key="AIzaSyDH5t5W0fiItfzIOomAvbPVgNWIQozki6U")
-    
-    model = genai.GenerativeModel('gemini-pro')
-    
-    prompt = basicPrompt + circular
-    
-    response = model.generate_content(prompt)
-    
-    print(response.text)
+        print("Inserted with ID: " + str(circID))
+        
+        response = classifier.classify(circular.testo)
+        
+        query = "INSERT INTO indirizzamento(idCircolare, idClasse) VALUES"
+        if(response == "%"):  # All classes
+            for i in range(len(classes)):
+                query += " (" + str(circID) + ", " + str(classes[i]) + "),"
+        elif(response.isnumeric()): # All classes of a year
+            for i in range(len(classes)):
+                if(classes[i].find(response) != -1):
+                    query += " (" + str(circID) + ", " + str(classes[i]) + "),"
+        else:
+            splittedResponse = response.split(";")
+        
+            for i in range(len(splittedResponse)):
+                query += " (" + str(circID) + ", " + str(splittedResponse[i]) + "),"
+                
+        query = query[:-1]
+        
+        db.insert_query(query)
+        
+        print("Inserted completed with ID: " + str(circID) + " and classes: " + response)
+        
+        
