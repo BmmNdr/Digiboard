@@ -12,8 +12,8 @@ def getLastNum(db):
 
 if __name__ == '__main__':
     
-    #db = Database(host="db.springmc.net", port="3307", username="digiboard", password="digiboard", database="digiboard")
-    db = Database(host="localhost", port="3306", username="root", password="", database="digiboard")
+    db = Database(host="db.springmc.net", port="3307", username="root", password="digiboard", database="digiboard")
+    #db = Database(host="localhost", port="3306", username="root", password="", database="digiboard")
     db.connect()
     
     classifier = Classifier(db)
