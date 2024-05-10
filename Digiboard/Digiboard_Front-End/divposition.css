@@ -1,0 +1,13 @@
+#mydiv {
+    position:fixed;
+    bottom: 1%;    
+}
+#mycountdown {
+    position:fixed;
+    bottom: 1%; 
+    right: 1%;   
+}
+
+#div {
+    background-color: #FFC72C !important;
+}
