@@ -4,10 +4,13 @@ class database
 {     
     private $_connection;
     private static $_instance;
-    
-    private  $dbhost = "db.springmc.net";
-    private  $port = 3307;
+    /*private  $dbhost = "127.0.0.1";
     private  $username = "root";
+    private  $password = "";
+    private  $dbname = "digiboard";*/
+    private  $dbhost = "db.springmc.net";
+    private  $port = "3307";
+    private  $username = "digiboard";
     private  $password = "digiboard";
     private  $dbname = "digiboard";
 

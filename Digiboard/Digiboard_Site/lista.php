@@ -79,7 +79,7 @@
                     $filtering = true;
                     $params = [];
                     $count = 0;
-                    $query = "SELECT circolare.* FROM circolare JOIN indirizzamento ON circolare.ID = indirizzamento.idCircolare WHERE ";
+                    $query = "SELECT DISTINCT circolare.* FROM circolare JOIN indirizzamento ON circolare.ID = indirizzamento.idCircolare WHERE ";
                     //if(isset($_POST["filtro"]) && $_POST["filtro"] != ""){$query .= "circolare.titolo LIKE ? AND "; $count++; array_push($params, $_POST["filtro"]);}
                     if(isset($_POST["num"]) && $_POST["num"] != "") {$query .= "indirizzamento.idClasse LIKE ? AND "; $count++; array_push($params, $_POST["num"]."%");}
                     if(isset($_POST["sez"]) && $_POST["sez"] != "") {$query .= "indirizzamento.idClasse LIKE ? AND "; $count++; array_push($params, "_".$_POST["sez"]."%");}
@@ -89,15 +89,11 @@
 
                     $query = rtrim($query, "AND ");
                     $query.= ";";
-                    //echo $query;
-
-                    print_r($params);
 
                     $types = "";
                     for ($i=0; $i < $count; $i++) { 
                         $types.="s";
                     }
-                    echo $types;
                     $records = [];
                     
                     $records = $circolari->selectedCircolari($query, $types, $params);
@@ -163,9 +159,9 @@
             </div>
 
             <div class="search-button">
-                <a onclick="this.parentNode.submit();">
+                <button type="submit">
                     <img src="img/icons/search.ico" width="20px" height="20px">
-                </a>
+                </button>
             </div>
         </form>
     </div>

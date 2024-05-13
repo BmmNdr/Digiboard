@@ -9,47 +9,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digiboard</title>
     <link rel="stylesheet" href="css/style.css" type="text/css" >
-    <style>
-        @keyframes slideIn {
-            from { 
-                transform: translateX(0); 
-            }
-            to { 
-                transform: translateX(calc(-100% - 20px));
-            }
-        }
-
-        @keyframes fadeOut {
-            from { 
-                opacity: 1;
-            }
-            to { 
-                opacity: 0;
-            }
-        }
-
-        @keyframes fadeIn {
-            from { 
-                opacity: 0;
-            }
-            to { 
-                opacity: 1;
-            }
-        }
-
-        .animate {
-            animation: slideIn 1s ease-out;
-        }
-    </style>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <?php include "navbar/navbar.php"; ?>
+    <?php include "navbar/navbar.php"; ?><br>
 
-    <a href="lista.php" class="styled-link">Visualizza altre circolari</a>
+    
+    <h2 class="text-center pl-3">Le ultime uscite</h2><br>
 
-    <h2>Le ultime uscite</h2>
-
-    <div id='cards' class='cards'>
+    <div id='cards' class='cards' >
         <!-- Cards will be inserted here by JavaScript -->
     </div>
 
@@ -58,18 +26,6 @@
         var currentIndex = 0;
 
         function displayCircolari() {
-            // Get the first card
-            var firstCard = document.querySelector('.card');
-        
-            // If a card exists, animate it out
-            /*if (firstCard) {
-                firstCard.style.animation = 'fadeOutLeft 1s ease-out forwards';
-        
-                // Remove the first card after the animation completes
-                setTimeout(function() {
-                    firstCard.remove();
-                }, 1000);
-            }*/
             
             var cards = document.getElementsByClassName('card');
             for (var i = 0; i < cards.length; i++) {
@@ -100,18 +56,21 @@
                 }
                 currentIndex = (currentIndex + 1) % circolariArray.length;
             }, 950);
-    
-            // Remove the animation class after it completes
-            /*setTimeout(function() {
-                cards = document.getElementsByClassName('card');
-                for (var i = 0; i < cards.length; i++) {
-                    cards[i].classList.remove('animate');
-                }
-            }, 1000);*/
         }
         
         displayCircolari(); // Display the first three circolari immediately
         setInterval(displayCircolari, 5000);
+
     </script>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <a href="lista.php" class="styled-link pl-3">Visualizza altre circolari</a>
+        </div>
+    </div>
+
+    
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>
