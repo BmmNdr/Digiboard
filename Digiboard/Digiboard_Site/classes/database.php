@@ -4,15 +4,12 @@ class database
 {     
     private $_connection;
     private static $_instance;
-    private  $dbhost = "127.0.0.1";
+    
+    private  $dbhost = "db.springmc.net";
+    private  $port = 3307;
     private  $username = "root";
-    private  $password = "";
-    private  $dbname = "digiboard";
-    /*private  $dbhost = "db.springmc.net";
-    private  $port = "3307";
-    private  $username = "digiboard";
     private  $password = "digiboard";
-    private  $dbname = "digiboard";*/
+    private  $dbname = "digiboard";
 
 
     public static function getInstance()
@@ -25,7 +22,7 @@ class database
 
     private function __construct()
     {
-        $this->_connection = new mysqli($this->dbhost, /*$this->port,*/ $this->username,  $this->password, $this->dbname);
+        $this->_connection = new mysqli($this->dbhost, $this->username,  $this->password, $this->dbname, $this->port);
         
         // Error handling
         if (mysqli_connect_errno()) {

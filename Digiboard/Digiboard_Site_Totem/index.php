@@ -10,11 +10,12 @@ $arrayCircolari = array();
 // Prepara e esegui la query SQL per ottenere tutte le circolari relative allo schermo attuale
 //schermo->luogo->classe->indirizzamento->circolare
 
+$_SESSION['codSchermo'] = $_GET['cod'];
 
 $stmt = $conn->prepare("SELECT * FROM circolare JOIN indirizzamento ON circolare.ID = indirizzamento.idCircolare
                         JOIN classe ON indirizzamento.idClasse = classe.ID JOIN luogo ON classe.idLuogo = luogo.ID
                         JOIN schermo ON luogo.ID = schermo.idLuogo WHERE schermo.COD = ?");
-$stmt->bind_param("s", $_SESSION['codSchermo']);  // TODO: Inserire il codice dello schermo nella sessione
+$stmt->bind_param("s", $_SESSION['codSchermo']); 
 $stmt->execute();
 $result = $stmt->get_result();
 
@@ -78,7 +79,7 @@ foreach ($arrayCircolari as $circolare) {
     var index = 0;
     var arrayCircolari = <?php echo json_encode($arrayCircolariJS); ?>;
     var countdownInterval;
-    var slideIntervalTime = 5000; // Slide interval time in milliseconds
+    var slideIntervalTime = 50000; // Slide interval time in milliseconds
 
     function startCountdown() {
       var countdownTime = slideIntervalTime / 1000; // Convert to seconds for display
