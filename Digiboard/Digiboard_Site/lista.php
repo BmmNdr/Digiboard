@@ -13,21 +13,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css" type="text/css" >
     <!-- filtro(search) js -->
-    <script>
-        function search() {
-            var input, filter, circolari;
-            input = document.getElementById("filtro");
-            filter = input.value.toUpperCase();
-            circolari = document.getElementsByName("titolo");
-            for (i = 0; i < circolari.length; i++) {
-                if (circolari[i].value.toUpperCase().indexOf(filter) > -1) {
-                    document.getElementsByName("card")[i].style.display = "";
-                } else {
-                    document.getElementsByName("card")[i].style.display = "none";
-                }
-            }
-        }
-    </script>
+    
     <style>
         .card {
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
@@ -55,7 +41,7 @@
     <div class="center-div">
         <form action="lista.php" method="post">
             <!-- filtro(search) html -->
-            <input type="text" id="filtro" name="filtro" oninput="search()" placeholder="Cerca il titolo" <?php if (isset($_POST["filtro"])){echo "value='".$_POST["filtro"]."'";}?>>
+            <input type="text" id="filtro" name="filtro" placeholder="Cerca il titolo" <?php if (isset($_POST["filtro"])){echo "value='".$_POST["filtro"]."'";}?>>
             <!-- filtro(a tendina) classe, corso, sezione, data -->
 
             <?php 
@@ -72,7 +58,7 @@
                 //filtraggio
                 $arrFiltro = [];
                 $filtering = false;
-                if(/*(isset($_POST["filtro"]) && $_POST["filtro"] != "") ||*/ (isset($_POST["num"]) && $_POST["num"] != "")
+                if((isset($_POST["filtro"]) && $_POST["filtro"] != "") || (isset($_POST["num"]) && $_POST["num"] != "")
                 || (isset($_POST["sez"]) && $_POST["sez"] != "") || (isset($_POST["cor"]) && $_POST["cor"] != "")
                 || (isset($_POST["dal"]) && $_POST["dal"] != "") || (isset($_POST["al"]) && $_POST["al"] != "")) {
 
@@ -80,7 +66,7 @@
                     $params = [];
                     $count = 0;
                     $query = "SELECT DISTINCT circolare.* FROM circolare JOIN indirizzamento ON circolare.ID = indirizzamento.idCircolare WHERE ";
-                    //if(isset($_POST["filtro"]) && $_POST["filtro"] != ""){$query .= "circolare.titolo LIKE ? AND "; $count++; array_push($params, $_POST["filtro"]);}
+                    if(isset($_POST["filtro"]) && $_POST["filtro"] != ""){$query .= "circolare.titolo LIKE ? AND "; $count++; array_push($params, "%".$_POST["filtro"]."%");}
                     if(isset($_POST["num"]) && $_POST["num"] != "") {$query .= "indirizzamento.idClasse LIKE ? AND "; $count++; array_push($params, $_POST["num"]."%");}
                     if(isset($_POST["sez"]) && $_POST["sez"] != "") {$query .= "indirizzamento.idClasse LIKE ? AND "; $count++; array_push($params, "_".$_POST["sez"]."%");}
                     if(isset($_POST["cor"]) && $_POST["cor"] != "") {$query .= "indirizzamento.idClasse LIKE ? AND "; $count++; array_push($params, "%".$_POST["cor"]);}
@@ -147,6 +133,9 @@
                 echo "<p>Sezione della classe: <span>" . $stringSezione . "</span></p>";
                 echo "<p>Corso della classe: <span>" . $stringCorso . "</span></p>";
                 echo "</div>";
+
+                //TO DO: se per tutto l'istituto o per classi specifiche chkbox
+                //       pagini per maggiore velocità
             ?>
             <!-- es: dal 17/10/2023 al 20/02/2024 (si può inserire anche una sola data)-->
             <div class="date-inputs">
